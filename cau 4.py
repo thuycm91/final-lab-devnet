@@ -12,7 +12,7 @@ def get_org():
     response= requests.get(url,headers=header,verify=False)
     data=response.json()
     parse_data=json.dumps(data,indent=4)
-    print(parse_data)
+    print(f"câu B:/n{parse_data}")
     # print(data)
     # print(type(data))
     device_null=[]
@@ -20,7 +20,7 @@ def get_org():
         if i['networkId']==None:
             device_null.append(i)
     parse_data=json.dumps(device_null,indent=4)     
-    print(json.dumps(device_null, indent=4))   
+    print(f"Cau C: /n{json.dumps(device_null, indent=4)}")   
     
 if __name__ == "__main__":
     get_org()

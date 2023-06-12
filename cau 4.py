@@ -13,8 +13,14 @@ def get_org():
     data=response.json()
     parse_data=json.dumps(data,indent=4)
     print(parse_data)
-    # for i in data:
-    #     id_org=i["id"]
-    #     print(id_org)
+    # print(data)
+    # print(type(data))
+    device_null=[]
+    for i in data:
+        if i['networkId']==None:
+            device_null.append(i)
+    parse_data=json.dumps(device_null,indent=4)     
+    print(json.dumps(device_null, indent=4))   
+    
 if __name__ == "__main__":
     get_org()
